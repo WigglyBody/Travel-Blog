@@ -6,8 +6,12 @@ $(document).ready(function(){
             $(".post-box").show("1000");
         }
         else{
-            $(".post-box").not("."+value).hide("1000");
-            $(".post-box").filter("."+value).show("1000");
+            $(".post-box")
+            .not("."+value)
+            .hide("1000");
+            $(".post-box")
+            .filter("."+value)
+            .show("1000");
         }
     });
     //Activación por botón
@@ -19,5 +23,5 @@ $(document).ready(function(){
 let header = document.querySelector("header");
 
 window.addEventListener("scroll", () => {
-    header.classList.toogle("shadow", window.scrollY > 0);
+    header.classList.toggle("shadow", window.scrollY > 0);
 });
