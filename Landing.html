@@ -3,129 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel & Write</title>
-    <link rel="stylesheet" href="assets/css/landing.css">
+    <title>Blogcito</title>
+    <link rel="stylesheet" href="landing.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
 </head>
 <body>
-    <script src="landing.js"></script>
 
     <header>
         <div class="nav container">
-        <a href="#" class="logo">Ho<span>li</span></a>
-        <a href="#" class="login">Login</a>
+            <a href="#" class="logo">Online<span> Travel</span></a>
+            <a href="#" class="login">Login</a>
         </div>
     </header>
 
     <section class="home" id="home">
         <div class="home-text container">
-            <h2 class="home-title">Blogcito</h2>
-            <span class="home-subtitle">texto xd</span>
+            <h2 class="home-title">Online Travel</h2>
+            <span class="home-subtitle">Explora y descubre el mundo a tu alrededor</span>
         </div>  
     </section>
 
     <div class="post-filter container">
         <span class="filter-item active-filter" data-filter="all">Todo</span>
-        <span class="filter-item" data-filter="cat1">Cat1</span>
-        <span class="filter-item" data-filter="cat2">Cat2</span>
-        <span class="filter-item" data-filter="cat3">Cat3</span>
+        <span class="filter-item" data-filter="gastronomia">Gastronomía</span>
+        <span class="filter-item" data-filter="cultural">Cultural</span>
+        <span class="filter-item" data-filter="turismo">Lugares Turísticos</span>
     </div>
 
     <section class="post container">
-
-        <div class="post-box">
-            <img src="#" alt="" class="post-imf">
-            <h2 class="category">Cat1</h2>
-            <a href="#" class="post-title">
-                texto0.2
-            </a>
-            <span class="post-date">09/11/2024</span>
-            <p class="post-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, minus? Quidem rerum optio debitis sit. Debitis natus quae nostrum architecto ab aliquid voluptates, explicabo officia, odit velit corrupti tempora fugiat.</p>
-            <div class="profile"></div>
-            <img src="#" alt="" class="profile-img">
-            <span class="profile-name">Autor desconocido</span>
+        <div class="post-box gastronomia">
+            <img src="/img/paella.jpg" alt="Paella" class="post-img">
+            <h2 class="category">Gastronomía</h2>
+            <a href="#" class="post-title">Descubre la Auténtica Paella Española</a>
+            <span class="post-date">12/11/2024</span>
+            <p class="post-description">La paella es un plato icónico de España, elaborado con arroz, mariscos y especias, una explosión de sabor mediterráneo.</p>
+            <div class="profile">
+                <img src="/img/autor2.jpg" alt="Chef" class="profile-img">
+                <span class="profile-name">Chef Alejandro Gómez</span>
+            </div>
         </div>
 
-        <div class="post-box">
-            <img src="#" alt="" class="post-img">
-            <h2 class="category">Cat2</h2>
-            <a href="#" class="post-title">
-                Titulo
-            </a>
-            <span class="post-date">09/11/2024</span>
-            <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis molestias delectus eaque sequi eos, quaerat necessitatibus excepturi numquam rem officia deserunt repudiandae iure odio eius voluptatum! Tempore doloremque illo impedit!</p>
-            <div class="profile"></div>
-            <img src="#" alt="" class="profile-img">
-            <span class="profile-name">Autor desconocido</span>
+        <div class="post-box cultural">
+            <img src="/img/danzafolklore.jpg" alt="Danza Folklórica" class="post-img">
+            <h2 class="category">Cultural</h2>
+            <a href="#" class="post-title">El Arte de la Danza Folklórica</a>
+            <span class="post-date">10/11/2024</span>
+            <p class="post-description">Conoce la danza folklórica, una expresión cultural que refleja las tradiciones y raíces de una nación.</p>
+            <div class="profile">
+                <img src="/img/autor1.jpg" alt="Dancer" class="profile-img">
+                <span class="profile-name">María Pérez</span>
+            </div>
         </div>
 
-        <div class="post-box">
-            <img src="#" alt="" class="post-img">
-            <h2 class="category">Cat3</h2>
-            <a href="#" class="post-title">
-                Titulo
-            </a>
-            <span class="post-date">09/11/2024</span>
-            <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad nihil sit architecto voluptatum commodi amet dolorem earum tempore corporis neque deleniti sint aliquam, iusto at vero dignissimos eum pariatur odio.</p>
-            <div class="profile"></div>
-            <img src="#" alt="" class="profile-img">
-            <span class="profile-name">Autor desconocido</span>
+        <div class="post-box turismo">
+            <img src="/img/machu-picchu.jpg" alt="Machu Picchu" class="post-img">
+            <h2 class="category">Lugares Turísticos</h2>
+            <a href="#" class="post-title">Explora Machu Picchu: Maravilla del Mundo</a>
+            <span class="post-date">08/11/2024</span>
+            <p class="post-description">Descubre la historia y la majestuosidad de Machu Picchu, una de las joyas más importantes de los Andes peruanos.</p>
+            <div class="profile">
+                <img src="/img/autor3.jpg" alt="Guide" class="profile-img">
+                <span class="profile-name">Guía: Jorge Quispe</span>
+            </div>
         </div>
 
-            <div class="post-box">
-                <img src="#" alt="" class="post-imf">
-                <h2 class="category">Cat1</h2>
-                <a href="#" class="post-title">
-                    texto0.2
-                </a>
-                <span class="post-date">09/11/2024</span>
-                <p class="post-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quaerat facilis ut perferendis, ipsam quos commodi, recusandae minima omnis repellendus, sit vel magnam. Deleniti rem fuga sint minus a iusto?</p>
-                <div class="profile"></div>
-                <img src="#" alt="" class="profile-img">
-                <span class="profile-name">Autor desconocido</span>
+        <div class="post-box cultural">
+            <img src="/img/muralismo.jpeg" alt="Muralismo" class="post-img">
+            <h2 class="category">Cultural</h2>
+            <a href="#" class="post-title">El Muralismo y su Impacto Social</a>
+            <span class="post-date">09/11/2024</span>
+            <p class="post-description">Descubre cómo el muralismo ha transformado las calles de América Latina en galerías de arte al aire libre.</p>
+            <div class="profile">
+                <img src="/img/autor4.jpg" alt="Artist" class="profile-img">
+                <span class="profile-name">Artista: Diego Ramírez</span>
             </div>
-    
-            <div class="post-box">
-                <img src="#" alt="" class="post-img">
-                <h2 class="category">Cat2</h2>
-                <a href="#" class="post-title">
-                    Titulo
-                </a>
-                <span class="post-date">09/11/2024</span>
-                <p class="post-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt nobis perferendis voluptate molestias aspernatur aut rerum fugit et ullam nam optio eum, facilis minus, molestiae hic consectetur tempora? Incidunt, dolor.o</p>
-                <div class="profile"></div>
-                <img src="#" alt="" class="profile-img">
-                <span class="profile-name">Autor desconocido</span>
-            </div>
-    
-            <div class="post-box">
-                <img src="#" alt="" class="post-img">
-                <h2 class="category">Cat3</h2>
-                <a href="#" class="post-title">
-                    titulo
-                </a>
-                <span class="post-date">09/11/2024</span>
-                <p class="post-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni obcaecati totam, dicta quibusdam quisquam minima doloremque esse ipsam, consequuntur facere distinctio. Quisquam id magni quibusdam ullam recusandae veritatis delectus officiis?</p>
-                <div class="profile"></div>
-                <img src="#" alt="" class="profile-img">
-                <span class="profile-name">Autor desconocido</span>
-            </div>
-            </div>
-        </section>
-        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        </div>
 
+        <div class="post-box turismo">
+            <img src="/img/paris.jpg" alt="Torre Eiffel" class="post-img">
+            <h2 class="category">Lugares Turísticos</h2>
+            <a href="#" class="post-title">París y la Iconicidad de la Torre Eiffel</a>
+            <span class="post-date">12/11/2024</span>
+            <p class="post-description">La Torre Eiffel, símbolo de París, es una parada obligatoria para cualquier visitante que busque una experiencia inolvidable.</p>
+            <div class="profile">
+                <img src="/img/autor5.jpg" alt="Guide" class="profile-img">
+                <span class="profile-name">Guía: Sophie Dubois</span>
+            </div>
+        </div>
 
-<div class="footer container">
-    <p>By Emilio and Domenica </p>
-    <div class="social">
-        <a href="#"><i class='bx bxl-facebook'></i></a>
-        <a href="#"><i class='bx bxl-twitter'></i></a>
-        <a href="#"><i class='bx bxl-instagram'></i></a>
+        <div class="post-box cultural">
+            <img src="/img/teatro clasico.jpg" alt="Teatro Clásico" class="post-img">
+            <h2 class="category">Cultural</h2>
+            <a href="#" class="post-title">La Magia del Teatro Clásico</a>
+            <span class="post-date">11/11/2024</span>
+            <p class="post-description">El teatro clásico sigue cautivando al público con sus tramas y personajes inolvidables. Conoce su historia y legado.</p>
+            <div class="profile">
+                <img src="/img/autor6.jpeg" alt="Actor" class="profile-img">
+                <span class="profile-name">Actor: María Gómez</span>
+            </div>
+        </div>
+
+        <div class="post-box gastronomia">
+            <img src="/img/sushi.jpg" alt="Sushi" class="post-img">
+            <h2 class="category">Gastronomía</h2>
+            <a href="#" class="post-title">Sushi: El Arte de la Cocina Japonesa</a>
+            <span class="post-date">10/11/2024</span>
+            <p class="post-description">Explora la técnica y los sabores únicos del sushi, una de las expresiones culinarias más famosas de Japón.</p>
+            <div class="profile">
+                <img src="/img/autor7.jpg" alt="Chef" class="profile-img">
+                <span class="profile-name">Chef: Akira Tanaka</span>
+            </div>
+        </div>
+
+        <div class="post-box turismo">
+            <img src="/img/coliseoromano.jpeg" alt="Coliseo Romano" class="post-img">
+            <h2 class="category">Lugares Turísticos</h2>
+            <a href="#" class="post-title">El Coliseo: Testigo de la Historia Romana</a>
+            <span class="post-date">13/11/2024</span>
+            <p class="post-description">Visita el Coliseo de Roma, un majestuoso anfiteatro que ha sobrevivido siglos como un emblema de la ingeniería y cultura romana.</p>
+            <div class="profile">
+                <img src="/img/autor8.jpeg" alt="Guide" class="profile-img">
+                <span class="profile-name">Guía: Marco Antonelli</span>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="landing.js"></script>
+
+    <div class="footer container">
+        <p>By Emilio and Doménica</p>
+        <div class="social">
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="#"><i class='bx bxl-instagram'></i></a>
+        </div>
     </div>
-</div>
-
-    <script src="assets/js/landing.js"></script>    
 
 </body>
 </html>
