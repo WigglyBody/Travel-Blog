@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="#">
+</head>
+<body>
+    <h1>Panel de Administración</h1>
+    <form id="postForm">
+        <label for="title">Título:</label>
+        <input type="text" id="title" required>
+
+        <label for="category">Categoría:</label>
+        <input type="text" id="category" required>
+
+        <label for="description">Descripción:</label>
+        <textarea id="description" required></textarea>
+
+        <label for="date">Fecha:</label>
+        <input type="date" id="date" required>
+
+        <label for="author">Autor:</label>
+        <input type="text" id="author" required>
+
+        <button type="submit">Publicar</button>
+    </form>
+
+    <h2>Publicaciones Existentes</h2>
+    <div id="postsContainer"></div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
