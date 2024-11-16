@@ -1,20 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Variables */
+:root{
+    --container-color: #1a1e21;
+    --second-color: #fd8f44;
+    --third-color: #fc7114;
+    --text-color: #172317;
+    --bg-color: #fff;
 }
 
 body{
-    background-color: #c9d6ff;
     background: linear-gradient(to right, #e2e2e2, #c9d6ff);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     height: 100vh;
+}
+
+a{
+    text-decoration: none;
+}
+
+.nav-container{
+    margin: auto;
+    width: 100%;
+    background: var(--container-color);
+}
+
+/* Header */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200;
+}
+
+header.shadow{
+    background: var(--bg-color);
+    box-shadow: 0 1px 4px hsl(0 4% 14% / 10%);
+    transition: 0.4s;
+}
+
+header.shadow .logo{
+    color: var(--text-color);
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.logo{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--bg-color);
+    padding-left: 115px;
+}
+
+.logo span{
+    color: var(--second-color);
 }
 
 .container{
@@ -26,6 +81,7 @@ body{
     width: 768px;
     max-width: 100%;
     min-height: 480px;
+    margin-top: 4.5rem;
 }
 
 .container p{
@@ -47,7 +103,7 @@ body{
 }
 
 .container button{
-    background-color: #519548 ;
+    background: var(--third-color);
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
@@ -58,11 +114,6 @@ body{
     text-transform: uppercase;
     margin-top: 10px;
     cursor: pointer;
-}
-
-.container button.hidden{
-    background-color: transparent;
-    border-color: #fff;
 }
 
 .container form{
@@ -163,7 +214,7 @@ body{
 .toggle{
     background-color: #1b676b;
     height: 100%;
-    background: linear-gradient(to right, #88c425  , #519548);
+    background: linear-gradient(to right, var(--text-color) , var(--container-color));
     color: #fff;
     position: relative;
     left: -100%;
