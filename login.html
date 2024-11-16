@@ -1,55 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/login_css.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/login_css.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
     <title>Iniciar Sesión</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <header>
-        <div class="nav nav-container">
-          <a href="index.html" class="logo">Write &<span> Travel</span></a>
-        </div>
+      <div class="nav nav-container">
+        <a href="index.html" class="logo">Write &<span> Travel</span></a>
+      </div>
     </header>
 
     <div class="container" id="container">
-        <div class="form-container sign-up">
-            <form id="registerForm">
-                <h1>Crear Cuenta</h1>
-                <input type="text" id="registerName" placeholder="Nombre" required>
-                <input type="email" id="registerEmail" placeholder="Email" required>
-                <input type="password" id="registerPassword" placeholder="Contraseña" required>
-                <button type="submit">Registrarse</button>
-            </form>
+      <div class="form-container sign-up">
+        <form id="registerForm">
+          <h1>Crear Cuenta</h1>
+          <input type="text" id="registerName" placeholder="Nombre" required />
+          <input type="email" id="registerEmail" placeholder="Email" required />
+          <input
+            type="password"
+            id="registerPassword"
+            placeholder="Contraseña"
+            required
+          />
+          <button type="submit">Registrarse</button>
+        </form>
+      </div>
+      <div class="form-container sign-in">
+        <form id="loginForm">
+          <h1>Iniciar Sesion</h1>
+          <input type="email" id="loginEmail" placeholder="Email" required />
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="Password"
+            required
+          />
+          <a href="#">¿Olvidó su contraseña?</a>
+          <button type="submit">Iniciar Sesion</button>
+        </form>
+      </div>
+      <div class="toggle-container">
+        <div class="toggle">
+          <div class="toggle-panel toggle-left">
+            <h1>Bienvenido</h1>
+            <p>
+              Introduzca sus datos personales para utilizar todas las funciones
+              del sitio
+            </p>
+            <button class="hidden" id="login">Iniciar Sesion</button>
+          </div>
+          <div class="toggle-panel toggle-right">
+            <h1>Holi</h1>
+            <p>
+              Regístrese con sus datos personales para utilizar todas las
+              funciones del sitio.
+            </p>
+            <button class="hidden" id="register">Registrarse</button>
+          </div>
         </div>
-        <div class="form-container sign-in">
-            <form id="loginForm">
-                <h1>Iniciar Sesion</h1>
-                <input type="email" id="loginEmail" placeholder="Email" required>
-                <input type="password" id="loginPassword" placeholder="Password" required>
-                <a href="#">¿Olvidó su contraseña?</a>
-                <button type="submit">Iniciar Sesion</button>
-            </form>
-        </div>
-        <div class="toggle-container">
-            <div class="toggle">
-                <div class="toggle-panel toggle-left">
-                    <h1>Bienvenido</h1>
-                    <p>Introduzca sus datos personales para utilizar todas las funciones del sitio</p>
-                    <button class="hidden" id="login">Iniciar Sesion</button>
-                </div>
-                <div class="toggle-panel toggle-right">
-                    <h1>Holi</h1>
-                    <p>Regístrese con sus datos personales para utilizar todas las funciones del sitio.</p>
-                    <button class="hidden" id="register">Registrarse</button>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
 
     <script src="assets/js/main_login.js"></script>
-</body>
+
+    <div class="footer footer-container">
+        <p>© Emilio and Doménica</p>
+        <div class="social">
+          <a href="#"><i class="bx bxl-facebook"></i></a>
+          <a href="#"><i class="bx bxl-twitter"></i></a>
+          <a href="#"><i class="bx bxl-instagram"></i></a>
+        </div>
+      </div>
+  </body>
 </html>
