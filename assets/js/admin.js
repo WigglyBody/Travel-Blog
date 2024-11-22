@@ -104,3 +104,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+//Para que el Header se mantenga siempre presente al scrollear
+let header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+  header.classList.toggle("shadow", window.scrollY > 0);
+});
