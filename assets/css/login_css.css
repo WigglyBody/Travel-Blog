@@ -304,6 +304,10 @@ header.shadow .logo {
   .social{
     justify-content: center;
   }
+
+  .container form {
+    padding: 0 10px;
+  }
 }
 
 @keyframes move {
