@@ -63,3 +63,10 @@ loginForm.addEventListener('submit', async (e) => {
         console.error('Error en el inicio de sesión:', error);
     }
 });
+
+//Para que el Header se mantenga siempre presente al scrollear
+let header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+  header.classList.toggle("shadow", window.scrollY > 0);
+});
