@@ -111,3 +111,45 @@ let header = document.querySelector("header");
 window.addEventListener("scroll", () => {
   header.classList.toggle("shadow", window.scrollY > 0);
 });
+
+//Para que la sidebar se contraiga y amplie
+document.addEventListener('DOMContentLoaded', function () {
+    const sidebar = document.querySelector('.sidebar');
+    const openBar = document.querySelector('#open-icon');
+    const closeBar = document.querySelector('#close-icon');
+
+    function showNavBar() {
+        sidebar.style.display = 'block';
+        openBar.style.display = 'none';
+        closeBar.style.display = 'block';
+    }
+
+    function closeNavBar() {
+        sidebar.style.display = 'none';
+        openBar.style.display = 'block';
+        closeBar.style.display = 'none';
+    }
+
+    function applyStyles() {
+        if (window.innerWidth > 768) {
+            sidebar.style.display = 'block';
+            openBar.style.display = 'none';
+            closeBar.style.display = 'none';
+        } else {
+            sidebar.style.display = 'none';
+            openBar.style.display = 'block';
+            closeBar.style.display = 'none';
+        }
+    }
+
+    // Añadir eventos de clic a los íconos
+    openBar.addEventListener('click', showNavBar);
+    closeBar.addEventListener('click', closeNavBar);
+
+    // Ejecutar la función cuando la página se carga
+    window.addEventListener('load', applyStyles);
+
+    // Ejecutar la función cada vez que se redimensiona la ventana
+    window.addEventListener('resize', applyStyles);
+});
+

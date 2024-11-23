@@ -64,11 +64,23 @@ header.shadow .logo{
     color: var(--text-color);
 }
 
+header.shadow .menu-icon{
+    color: var(--text-color);
+}
+
 .nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: left;
     padding: 18px 0;
+}
+
+/* Estilo del ícono del menú */
+.menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--bg-color);
 }
 
 .logo {
@@ -219,11 +231,19 @@ button:hover {
     .home-text {
         width: 100%;
     }
+
+    #open-icon{
+        display: none;
+    }
+
+    #close-icon{
+        display: none;
+    }
 }
 
 @media (max-width: 800px) {
     .nav {
-        padding: 14px 0;
+        padding: 16px 0;
     }
 
     .logo {
@@ -238,7 +258,7 @@ button:hover {
 
 @media (max-width: 768px) {
     .nav {
-        padding: 10px 0;
+        padding: 15px 0;
     }
 
     section {
@@ -253,23 +273,34 @@ button:hover {
         font-size: 2rem;
     }
 
+    #open-icon{
+        display: block;
+    }
+
+    #close-icon{
+        display: none;
+    }
+
     .sidebar {
-        width: 200px;
-        top: 58px;
+        width: 215px;
+        padding: 10px;
+        padding-top: 1rem;
+        position: fixed;
+        z-index: 100;
+        display: none;
+    }
+
+    .sidebar a {
+        font-size: 13px;
+        padding: 5px;
     }
 
     .main-content {
-        margin-left: 220px;
+        margin-left: 0;
     }
 }
 
 @media (max-width: 570px) {
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: static;
-    }
-
     .main-content {
         margin-left: 0;
     }

@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel - Write & Travel</title>
     <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header>
         <div class="nav container">
+            <div class="menu-icon" id="open-icon">
+                <i class="fa-solid fa-bars" onclick="showSideBar()"></i>
+            </div>
+            <div class="menu-icon" id="close-icon" onclick="closeSideBar()">
+                <i class="fa-solid fa-x"></i>
+            </div>
             <a href="index.html" class="logo">Write &<span> Travel</span></a>
         </div>
     </header>
