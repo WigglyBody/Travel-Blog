@@ -1,15 +1,15 @@
 /* Fuentes de Google */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-*{
+* {
     font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     scroll-behavior: smooth;
     scroll-padding-top: 2rem;
-    box-sizing: border-box;
 }
 /* Variables */
-:root{
+:root {
     --container-color: #1a1e21;
     --second-color: #fd8f44;
     --third-color: #fc7114;
@@ -17,33 +17,24 @@
     --bg-color: #fff;
 }
 
-::selection{
+::selection {
     color: var(--bg-color);
     background-color: var(--second-color);
 }
 
-body {
-  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 100vh;
-}
-
-a{
+a {
     text-decoration: none;
 }
 
-li{
+li {
     list-style: none;
 }
 
-img{
+img {
     width: 100%;
 }
 
-section{
+section {
     padding: 3rem 0 2rem;
 }
 
@@ -51,20 +42,16 @@ section{
     max-width: 1068px;
     margin: auto;
     width: 100%;
-    background: var(--bg-color);
-    border-radius: 0.5rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
-    padding: 20px;
 }
 
 /* Header */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 200;
-  background: var(--container-color);
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200;
+    background: var(--container-color);
 }
 
 header.shadow{
@@ -78,53 +65,78 @@ header.shadow .logo{
 }
 
 .nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--bg-color);
-  padding-left: 115px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--bg-color);
 }
 
 .logo span {
-  color: var(--second-color);
+    color: var(--second-color);
 }
 
-.back {
-  padding: 8px 14px;
-  text-transform: uppercase;
-  font-weight: 500;
-  border-radius: 4px;
-  background: var(--second-color);
-  color: var(--bg-color);
+/* Sidebar */
+.dashboard {
+    display: flex;
 }
 
-.back:hover {
-  background: hsl(24, 98%, 58%);
-  transition: 0.3s;
+.sidebar {
+    width: 250px;
+    background: var(--container-color);
+    padding: 20px;
+    position: fixed;
+    top: 64px; /* Ajusta según la altura de tu header */
+    left: 0;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    color: var(--bg-color);
+    margin-bottom: 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.sidebar a:hover {
+    background: var(--second-color);
+    transition: 0.3s;
+}
+
+.main-content {
+    margin-left: 270px; /* Ajusta según el ancho de tu sidebar */
+    padding: 0;
+    margin-right: 0;
+    width: 1050px;
 }
 
 /* Home */
 .home{
     width: 100%;
-    min-height: 200px;
-    background: var(--container-color);
+    min-height: 115px;
     display: grid;
     justify-content: center;
     align-items: center;
+    padding-top: 7rem;
+    padding-bottom: 0;
+
 }
 .home-text{
-    color: var(--bg-color);
+    color: var(--text-color);
     text-align: center;
 }
 
 .home-title{
-    font-size: 2.5rem;
+    font-size: 3.5rem;
 }
 
 .home-subtitle{
@@ -133,14 +145,11 @@ header.shadow .logo{
 }
 
 /* Formulario */
-form.container {
+form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     padding: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 14px hsl(355deg 25% 15% / 10%);
-    margin-top: 150px; /* Añadido margen superior para evitar que el contenido quede debajo del header */
 }
 
 label {
@@ -172,61 +181,99 @@ button:hover {
     transition: 0.3s;
 }
 
-/* Publicaciones */
-#postsContainer.container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, auto));
-    justify-content: center;
-    gap: 1.5rem;
-    padding-top: 2rem;
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.footer p {
+    font-size: 0.938rem;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.social .bx {
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.social .bx:hover {
+    color: var(--second-color);
+    transition: 0.3s all linear;
 }
 
 /* Responsive */
-@media(max-width: 1060px){
-    .container{
+@media (max-width: 1060px) {
+    .container {
         margin: 0 auto;
         width: 95%;
     }
 
-    .home-text{
+    .home-text {
         width: 100%;
     }
 }
 
-@media(max-width: 800px){
-    .nav{
+@media (max-width: 800px) {
+    .nav {
         padding: 14px 0;
     }
 
     .logo {
-      padding-left: 30px;
+        padding-left: 30px;
     }
 
-    form.container {
+    form {
         margin: 0 auto;
         width: 95%;
     }
 }
 
-@media(max-width: 768px){
-    .nav{
+@media (max-width: 768px) {
+    .nav {
         padding: 10px 0;
     }
 
-    section{
+    section {
         padding: 2rem 0;
     }
 
-    .home{
+    .home {
         min-height: 180px;
     }
 
-    .home-title{
+    .home-title {
         font-size: 2rem;
+    }
+
+    .sidebar {
+        width: 200px;
+        top: 58px;
+    }
+
+    .main-content {
+        margin-left: 220px;
     }
 }
 
-@media (max-width: 570px){
+@media (max-width: 570px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
     .footer {
         flex-direction: column;
         row-gap: 1rem;
@@ -234,29 +281,25 @@ button:hover {
         text-align: center;
     }
 
-    .social{
-      justify-content: center;
-    }
-
-    .container{
-      margin: 7rem 7rem 0;
+    .social {
+        justify-content: center;
     }
 }
 
-@media (max-width: 396px){
-    .home-title{
+@media (max-width: 396px) {
+    .home-title {
         font-size: 1.4rem;
     }
 
-    .home-subtitle{
+    .home-subtitle {
         font-size: 0.8rem;
     }
 
-    form.container{
+    form {
         padding: 1.5rem;
     }
 
-    button{
+    button {
         padding: 0.6rem;
     }
 }
