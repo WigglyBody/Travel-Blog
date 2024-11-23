@@ -41,21 +41,28 @@
                 <form id="postForm">
                     <label for="title">Título:</label>
                     <input type="text" id="title" required>
-
+                
                     <label for="category">Categoría:</label>
-                    <input type="text" id="category" required>
-
+                    <select id="category" required>
+                        <option value="gastronomia">Gastronomía</option>
+                        <option value="cultural">Cultural</option>
+                        <option value="turismo">Lugares Turísticos</option>
+                    </select>
+                
                     <label for="description">Descripción:</label>
                     <textarea id="description" required></textarea>
-
+                
                     <label for="date">Fecha:</label>
                     <input type="date" id="date" required>
-
+                
                     <label for="author">Autor:</label>
                     <input type="text" id="author" required>
-
+                
+                    <label for="image">Imagen:</label>
+                    <input type="file" id="image" accept="image/*" required>
+                
                     <button type="submit">Publicar</button>
-                </form>
+                </form>                
             </section>
 
             <section id="view-blogs" class="container">
@@ -64,10 +71,6 @@
                 <div id="postsContainer"></div>
             </section>
 
-            <section id="view-stats" class="container">
-                <h2>Estadísticas de Vistas</h2>
-                <!-- Aquí puedes insertar gráficos o estadísticas -->
-            </section>
         </div>
     </div>
 
