@@ -291,7 +291,7 @@ header.shadow .logo {
   }
 
   .container{
-    padding: 85px 0 15px;
+    padding: 25px 0 15px;
 }
 
 @media (max-width: 570px) {
@@ -304,10 +304,6 @@ header.shadow .logo {
 
   .social{
     justify-content: center;
-  }
-
-  .container{
-    padding: 65px 0 10px;
   }
 
   .container form {
