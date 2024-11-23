@@ -75,7 +75,7 @@ header.shadow .logo {
   width: 768px;
   max-width: 100%;
   min-height: 480px;
-  margin: 130px 7rem 40px;
+  margin: 130px 7rem 50px;
 }
 
 .container p {
@@ -164,6 +164,7 @@ header.shadow .logo {
 
 .footer{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0px 10px;
