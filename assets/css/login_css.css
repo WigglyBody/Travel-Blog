@@ -305,6 +305,10 @@ header.shadow .logo {
     justify-content: center;
   }
 
+  .container{
+    padding: 65px 0 10px;
+  }
+
   .container form {
     padding: 0 10px;
   }
