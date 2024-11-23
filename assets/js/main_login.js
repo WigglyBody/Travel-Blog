@@ -55,7 +55,7 @@ loginForm.addEventListener('submit', async (e) => {
         if (user) {
             alert(`Bienvenido, ${user.name}`);
             
-            window.location.href = '../Travel-Blog/index.html';
+            window.location.href = '../Travel-Blog/admin.html';
         } else {
             alert('Usuario o contraseña incorrectos');
         }
