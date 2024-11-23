@@ -7,23 +7,31 @@ document.addEventListener('DOMContentLoaded', () => {
     postForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const title = document.getElementById('title').value;
-        const category = document.getElementById('category').value;
+        const category = document.getElementById('category').value; 
         const description = document.getElementById('description').value;
         const date = document.getElementById('date').value;
         const author = document.getElementById('author').value;
+        const image = document.getElementById('image').files[0];
 
-        addPost(title, category, description, date, author);
-        savePosts();
-        postForm.reset();
+        const reader = new FileReader();
+        reader.onloadend = function() {
+            const imageUrl = reader.result;
+            addPost(title, category, description, date, author, imageUrl);
+            savePosts();
+            postForm.reset();
+        };
+        if (image) {
+            reader.readAsDataURL(image);
+        }
     });
 
-    function addPost(title, category, description, date, author) {
+    function addPost(title, category, description, date, author, imageUrl) {
         const postBox = document.createElement('div');
-        postBox.classList.add('post-box', category.toLowerCase());
+        postBox.classList.add('post-box', category);
 
         postBox.innerHTML = `
-            <img src="/img/${category.toLowerCase()}.jpg" alt="${category}" class="post-img">
-            <h2 class="category">${category}</h2>
+            <img src="${imageUrl}" alt="${category}" class="post-img">
+            <h2 class="category">${category.charAt(0).toUpperCase() + category.slice(1)}</h2>
             <a href="#" class="post-title">${title}</a>
             <span class="post-date">${date}</span>
             <p class="post-description">${description}</p>
@@ -49,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('description').value = description;
             document.getElementById('date').value = date;
             document.getElementById('author').value = author;
-            
+
             postsContainer.removeChild(postBox);
             savePosts();
             updateMainPage();
@@ -60,38 +68,38 @@ document.addEventListener('DOMContentLoaded', () => {
         const posts = [];
         postsContainer.querySelectorAll('.post-box').forEach(postBox => {
             const title = postBox.querySelector('a').textContent;
-            const category = postBox.querySelector('.category').textContent;
+            const category = postBox.querySelector('.category').textContent.toLowerCase();
             const description = postBox.querySelector('.post-description').textContent;
             const date = postBox.querySelector('.post-date').textContent;
             const author = postBox.querySelector('.profile-name').textContent;
+            const imageUrl = postBox.querySelector('.post-img').src;
 
-            posts.push({ title, category, description, date, author });
+            posts.push({ title, category, description, date, author, imageUrl });
         });
         localStorage.setItem('posts', JSON.stringify(posts));
-        updateMainPage();  // Actualiza la página principal cuando haya cambios
+        updateMainPage();
     }
 
     function loadPosts() {
         const posts = JSON.parse(localStorage.getItem('posts')) || [];
         posts.forEach(post => {
-            addPost(post.title, post.category, post.description, post.date, post.author);
+            addPost(post.title, post.category, post.description, post.date, post.author, post.imageUrl);
         });
     }
 
     function updateMainPage() {
         const posts = JSON.parse(localStorage.getItem('posts')) || [];
         const mainPostsContainer = document.querySelector('.post.container');
-        
-        // Limpia las publicaciones actuales
+
         mainPostsContainer.innerHTML = '';
 
         posts.forEach(post => {
             const postBox = document.createElement('div');
-            postBox.classList.add('post-box', post.category.toLowerCase());
+            postBox.classList.add('post-box', post.category);
 
             postBox.innerHTML = `
-                <img src="/img/${post.category.toLowerCase()}.jpg" alt="${post.category}" class="post-img">
-                <h2 class="category">${post.category}</h2>
+                <img src="${post.imageUrl}" alt="${post.category}" class="post-img">
+                <h2 class="category">${post.category.charAt(0).toUpperCase() + post.category.slice(1)}</h2>
                 <a href="#" class="post-title">${post.title}</a>
                 <span class="post-date">${post.date}</span>
                 <p class="post-description">${post.description}</p>
@@ -102,54 +110,22 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             mainPostsContainer.appendChild(postBox);
         });
-    }
-});
 
-//Para que el Header se mantenga siempre presente al scrollear
-let header = document.querySelector("header");
-
-window.addEventListener("scroll", () => {
-  header.classList.toggle("shadow", window.scrollY > 0);
-});
-
-//Para que la sidebar se contraiga y amplie
-document.addEventListener('DOMContentLoaded', function () {
-    const sidebar = document.querySelector('.sidebar');
-    const openBar = document.querySelector('#open-icon');
-    const closeBar = document.querySelector('#close-icon');
-
-    function showNavBar() {
-        sidebar.style.display = 'block';
-        openBar.style.display = 'none';
-        closeBar.style.display = 'block';
+        applyFilter();
     }
 
-    function closeNavBar() {
-        sidebar.style.display = 'none';
-        openBar.style.display = 'block';
-        closeBar.style.display = 'none';
-    }
-
-    function applyStyles() {
-        if (window.innerWidth > 768) {
-            sidebar.style.display = 'block';
-            openBar.style.display = 'none';
-            closeBar.style.display = 'none';
+    function applyFilter() {
+        const activeFilter = document.querySelector(".active-filter").getAttribute("data-filter");
+        if (activeFilter === "all") {
+            document.querySelectorAll(".post-box").forEach(postBox => postBox.style.display = 'block');
         } else {
-            sidebar.style.display = 'none';
-            openBar.style.display = 'block';
-            closeBar.style.display = 'none';
+            document.querySelectorAll(".post-box").forEach(postBox => {
+                if (postBox.classList.contains(activeFilter)) {
+                    postBox.style.display = 'block';
+                } else {
+                    postBox.style.display = 'none';
+                }
+            });
         }
     }
-
-    // Añadir eventos de clic a los íconos
-    openBar.addEventListener('click', showNavBar);
-    closeBar.addEventListener('click', closeNavBar);
-
-    // Ejecutar la función cuando la página se carga
-    window.addEventListener('load', applyStyles);
-
-    // Ejecutar la función cada vez que se redimensiona la ventana
-    window.addEventListener('resize', applyStyles);
 });
-
